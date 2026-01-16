@@ -39,14 +39,6 @@ This dataset is used to:
 - Train machine learning classification models
 - Predict loan approval eligibility
 - Support an interactive Streamlit web application
-
----
-
-## 🔗 Dataset Download
-You can download the dataset using the link below:
-
-https://raw.githubusercontent.com/Palak5050/bank-loan-prediction/main/data/bank_data.csv
-
 ---
 
 
