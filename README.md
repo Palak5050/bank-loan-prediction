@@ -104,7 +104,7 @@ streamlit run app.py
 The trained model successfully predicts loan approval outcomes with reliable accuracy and can be used as a decision-support system for banks.
 
 ---
-🚀 Future Improvements
+### 🚀 Future Improvements
 
 - Add advanced models (Random Forest, XGBoost)
 - Improve feature engineering
