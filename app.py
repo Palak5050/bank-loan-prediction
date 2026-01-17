@@ -152,26 +152,46 @@ with tabs[3]:
         with st.expander("Q1: What is the Age Distribution of Customers?"):    
             st.write("Most clients are aged 20-50,fewer 50-90")
             fig = px.histogram(df, x="age", nbins=20,title ="Age Distribution")
+            fig.update_layout(
+            paper_bgcolor="rgba(0,0,0,0)",
+            plot_bgcolor="rgba(0,0,0,0)"
+)
             st.plotly_chart(fig,use_container_width=True)
         # Q2:Job Distribution
         with st.expander("Q2: What is the Job Distribution of Customers?"):    
             st.write("Most clients are blue-collar,management and technician")
             fig = px.pie(df, names="job", title ="Job Distribution")
+            fig.update_layout(
+            paper_bgcolor="rgba(0,0,0,0)",
+            plot_bgcolor="rgba(0,0,0,0)"
+)
             st.plotly_chart(fig,use_container_width=True)
         # Q3:Marital Status Distribution
         with st.expander("Q3: What is the Marital Status Distribution of Customers?"):    
             st.write("Most clients are married")
             fig = px.pie(df, names="marital", title="Marital Status Distribution")
+            fig.update_layout(
+            paper_bgcolor="rgba(0,0,0,0)",
+            plot_bgcolor="rgba(0,0,0,0)"
+)
             st.plotly_chart(fig, use_container_width=True)
         # Q4:Education Distribution
         with st.expander("Q4: What is the Education Distribution of Customers?"):    
             st.write("Most clients have secondary and tertiary education")
             fig = px.pie(df, names="education",title ="Education Distribution")
+            fig.update_layout(
+            paper_bgcolor="rgba(0,0,0,0)",
+            plot_bgcolor="rgba(0,0,0,0)"
+)
             st.plotly_chart(fig,use_container_width=True)
         # Q5:Housing Loan Distribution
         with st.expander("Q5: What is the Housing Loan Distribution of Customers?"):    
             st.write("Most clients do not have housing loan")
             fig = px.pie(df, names="housing",title ="Housing Loan Distribution")
+            fig.update_layout(
+            paper_bgcolor="rgba(0,0,0,0)",
+            plot_bgcolor="rgba(0,0,0,0)"
+         )
             st.plotly_chart(fig,use_container_width=True)
 
         
