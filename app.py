@@ -84,25 +84,29 @@ with tabs[0]:
 
 # ================= TAB 2: LOGIN =================
 with tabs[2]:
-    credentials = {
-        "palak": "password1",
-        "admin": "password2",
-        "gagan": "password3"
-    }
+    st.subheader("🔐 Demo Login")
 
-    if not st.session_state.logged_in:
-        st.subheader("🔐 Login Required")
-        username = st.text_input("Username", key="login_user")
-        password = st.text_input("Password", type="password", key="login_pass")
+    st.markdown("""
+    Use the demo credentials below to explore the full application.
+    """)
 
-        if st.button("Login"):
-            if username in credentials and credentials[username] == password:
-                st.session_state.logged_in = True
-                st.success(f"🤗 Welcome, {username}!")
-            else:
-                st.error("❌ Invalid credentials")
-    else:
-        st.success("✅ Already logged in")
+    st.info("""
+    **Demo Credentials**
+
+    Username: **palak**  
+    Password: **password1**
+    """)
+
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
+
+    if st.button("Login"):
+        if username == "palak" and password == "password1":
+            st.session_state.logged_in = True
+            st.success("✅ Logged in successfully")
+            st.rerun()
+        else:
+            st.error("❌ Invalid demo credentials")
 
 # ================= TAB 3: CHATBOT (PUBLIC) =================
 with tabs[1]:
@@ -144,7 +148,7 @@ with tabs[1]:
 # ================= TAB 4: VISUALS (LOGIN REQUIRED) =================
 with tabs[3]:
     if not st.session_state.logged_in:
-        st.warning("🔒 Please login to view visuals")
+        st.warning("🔒 Please login using demo credentials to view visuals.")
     else:
         st.subheader("📊 Data Visualizations")
 
