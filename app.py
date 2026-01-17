@@ -21,14 +21,14 @@ st.markdown(r"""
  </style>
 """, unsafe_allow_html=True) 
 # cbc= CatBoostClassifier()
-cbc=joblib.load("catboost classifier.pkl")
+cbc=joblib.load("catboost_classifier.pkl")
 
 # title 
 st.title("🏧 Bank Portal ")
 
 # load the data
 try:
-    df = pd.read_csv("bank_data.csv",sep=";")
+    df = pd.read_csv("data/bank_data.csv",sep=";")
     st.success("👍 Dataset loaded")
 
 except FileNotFoundError:
@@ -209,4 +209,5 @@ if st.session_state.logged_in:
     #     except Exception as e:
     #         st.error(f"⚠️ Prediction failed: {e}")
             
+
 
