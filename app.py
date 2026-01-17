@@ -7,6 +7,9 @@ import numpy as np
 from catboost import CatBoostClassifier
 from catboost import Pool
 
+from corpus_backend import get_chatbot_response
+
+
 st.markdown(r"""
     <style>
     .stApp {
@@ -65,18 +68,18 @@ if 'chat_history' not in st.session_state:
 user_input = st.text_input("Ask me anything :")
 
 # simple rule based response 
-def chat_response(text):
-    text = text.lower()
-    if "hi" in text:
-        return "Hello! I am a ChatBot. Designed by Palak."
-    elif "who" in text:
-        return "I am BCA Graduate."
-    else:
-        return "I am still learning.Not able to answering."
+# def chat_response(text):
+#     text = text.lower()
+#     if "hi" in text:
+#         return "Hello! I am a ChatBot. Designed by Palak."
+#     elif "who" in text:
+#         return "I am BCA Graduate."
+#     else:
+#         return "I am still learning.Not able to answering."
 
 # Handle user input
 if user_input:
-    response = chat_response(user_input)
+    response = get_chatbot_response(user_input)
     st.session_state.chat_history.append(("you:" +user_input,"Bot:" +response))  
 
 # Display chat history
