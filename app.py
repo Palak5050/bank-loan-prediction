@@ -104,6 +104,7 @@ with tabs[2]:
         if username == "palak" and password == "password1":
             st.session_state.logged_in = True
             st.success("✅ Logged in successfully")
+            st.info("👉 Please navigate to the **Visuals** or **Prediction** tab from the top menu.")
             st.rerun()
         else:
             st.error("❌ Invalid demo credentials")
