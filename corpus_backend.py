@@ -1,3 +1,5 @@
+# Chatbot corpus backend file
+
 import random
 
 chatbot_corpus = {

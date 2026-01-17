@@ -1,3 +1,5 @@
+# UPDATED ON 17 JAN 2026 - CHATBOT BACKEND CONNECTED
+
 import pandas as pd
 import streamlit as st
 import plotly.express as px
