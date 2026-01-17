@@ -83,12 +83,11 @@ with tabs[0]:
     st.info("👉 Tip: Try the Chatbot first or Login to access full features.")
 
 # ================= TAB 2: LOGIN =================
+# ================= TAB 2: LOGIN =================
 with tabs[2]:
     st.subheader("🔐 Demo Login")
 
-    st.markdown("""
-    Use the demo credentials below to explore the full application.
-    """)
+    st.markdown("Use the demo credentials below to explore the full application.")
 
     st.info("""
     **Demo Credentials**
@@ -100,14 +99,24 @@ with tabs[2]:
     username = st.text_input("Username")
     password = st.text_input("Password", type="password")
 
+    # initialize message flag
+    if "login_msg" not in st.session_state:
+        st.session_state.login_msg = ""
+
     if st.button("Login"):
         if username == "palak" and password == "password1":
             st.session_state.logged_in = True
-            st.success("✅ Logged in successfully")
-            st.info("👉 Please navigate to the **Visuals** or **Prediction** tab from the top menu.")
-            st.rerun()
+            st.session_state.login_msg = "success"
         else:
-            st.error("❌ Invalid demo credentials")
+            st.session_state.login_msg = "error"
+
+    # 🔽 MESSAGE SHOWS **BELOW LOGIN**
+    if st.session_state.login_msg == "success":
+        st.success("✅ Logged in successfully!")
+        st.info("👉 Now you can use the **Visuals** and **Prediction** tabs.")
+
+    elif st.session_state.login_msg == "error":
+        st.error("❌ Invalid demo credentials")
 
 # ================= TAB 3: CHATBOT (PUBLIC) =================
 with tabs[1]:
